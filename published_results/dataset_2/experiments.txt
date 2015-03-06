@@ -1,0 +1,16 @@
+experiment		region		ctl	d3	d7	d10
+Smarca4_e2.1	Smarca4_e2	x.1	x.2	x.3	x.4	
+Smarca4_e3.1	Smarca4_e3	x.5	x.6	x.7	x.8
+Smarca4_e16.1	Smarca4_e16	x.1	x.2	x.3	x.4
+Smarca4_e16.2	Smarca4_e16	x.5	x.6	x.7	x.8
+Rosa			Rosa26_nc	x.1	x.2	x.3	x.4
+Trim33_e8.1		Trim33_e8	x.5	x.6	x.7	x.8
+Trim33_e18.2	Trim33_e18	x.5	x.6	x.7	x.8
+Dot1l_e11.2		Dot1l_e11	x.1	x.2	x.3	x.4
+Dot1l_e6.1		Dot1l_e6	x.5	x.6	x.7	x.8
+Dot1l_e1.1		Dot1l_e1	x.1	x.2	x.3	x.4
+Dot1l_e3.1		Dot1l_e3	x.5	x.6	x.7	x.8
+Ezh2_e2.1		Ezh2_e2		x.1	x.2	x.3	x.4
+Ezh2_e3.1		Ezh2_e3		x.5	x.6	x.7	x.8
+Ezh2_e18.1		Ezh2_e18	x.1	x.2	x.3	x.4
+Ezh2_e19.2		Ezh2_e19	x.5	x.6	x.7	x.8

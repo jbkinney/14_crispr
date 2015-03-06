@@ -2,10 +2,6 @@ import os, sys, time, commands
 import glob
 from ruffus import *
 
-# The first thing the pipeline does is run the specified configuration file
-#assert len(sys.argv) == 2
-#config_file = sys.argv[1]
-#execfile(config_file)
 
 # Set names for various files
 read1_split_file_glob = reads_dir + '/r1.fastq.*'
@@ -23,8 +19,6 @@ parse_seqs_script = python_to_use  + ' ' + pipeline_dir + '/routine_parse_seqs.p
 tally_seqs_script = python_to_use  + ' ' + pipeline_dir + '/routine_tally_seqs.py'
 plot_prevalences_script = python_to_use  + ' ' + pipeline_dir + '/routine_plot_prevalences.py'
 compute_efficiencies_script = python_to_use  + ' ' + pipeline_dir + '/routine_compute_efficiency.py'
-
-# main_pipeline.py must be run from a "run_pipeline.py" script. run_pipeline.py defines a small number of global variables that are essential for the operation of main_pipeline.py. 
 
 # Useful way to give feedback
 def give_feedback(feedback):
@@ -61,6 +55,7 @@ def submit_and_complete_jobs(scripts, use_multiple_nodes):
             time.sleep(wait_time)
             jobs_remaining = int(commands.getoutput('qstat | grep script_num | wc -l'))
             
+        finish_time = time.time()
         give_feedback('All jobs finished after %.1f seconds'%(finish_time - start_time))
             
     else:
@@ -69,7 +64,6 @@ def submit_and_complete_jobs(scripts, use_multiple_nodes):
             os.system(script)
 
     # Announce job completion
-    finish_time = time.time()
     give_feedback('Done.\n')
 
 ###################################################################################
