@@ -44,6 +44,7 @@ assert (disp_type in ['area','lines']), "Invalid display type"
 
 # Open file for reading
 f = open(summary_file_name)
+experiment = '_'.join(summary_file_name.split('/')[-1].split('_')[:-1])
 
 # Read in wt sequence and region name
 line = f.readline()
@@ -188,7 +189,7 @@ else:
 pct_editing = (1. - counts[0,1]/sum(counts[:,1]))*100
 pct_editing_control = (1. - counts[0,0]/sum(counts[:,0]))*100
 
-plt.title('%s'%region)
+plt.title('%s'%experiment)
 plt.ylim([2E-3,1E1])
 plt.xlim([t_min-0.5,t_max+0.5])
 plt.xticks(timepoints,timepoint_names)
@@ -199,4 +200,4 @@ ax.yaxis.set_tick_params(size=2)
 #plt.tight_layout()
 #plt.show()
 
-plt.savefig('%s/prevalence_%s_%s.pdf'%(output_dir,disp_type,region))
+plt.savefig('%s/prevalence_%s_%s.pdf'%(output_dir,disp_type,experiment))
