@@ -44,7 +44,11 @@ assert (disp_type in ['area','lines']), "Invalid display type"
 
 # Open file for reading
 f = open(summary_file_name)
+<<<<<<< Updated upstream
 experiment = '_'.join(summary_file_name.split('/')[-1].split('_')[:-1])
+=======
+experiment = summary_file_name.split('/')[-1].split('_summary.txt')[0]
+>>>>>>> Stashed changes
 
 # Read in wt sequence and region name
 line = f.readline()
