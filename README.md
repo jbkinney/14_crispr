@@ -2,6 +2,12 @@
 Code and processed data reported in Shi et al. (2015), Nat. Biotechnol. [in press]
 
 #####################
+DATA SETS
+#####################
+
+The raw sequence data for this study is available on the Sequence Read Archive. The accession numbers are SRR1971618 (Brd4 data) and SRR1972978 (Ezh2, Dotl1 and Smarca4 data).
+
+#####################
 RUNNING THE PIPELINE
 #####################
 
