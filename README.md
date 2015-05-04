@@ -73,9 +73,9 @@ config.py calls pipeline.py, which uses the rufus module and is divided into the
 
 5. For each experiment, combine the observed sequences obtained for every timepoint into a single file 
 
-6. Tally sequence occurrences [WHY IS THIS NECESSARY?]
+6. Tally sequence occurrences 
 
-7. Summarize the sequences observed in each experiment. This is the step in which each sequence is classified as an in-frame (IFN), out-of-frame (OFN), etc. mutation. The algorithm that does this is in /data/kinney/jkinney/projects/14_crispr/pipeline/routine_summarize_seqs.py. 
+7. Summarize the sequences observed in each experiment. This is the step in which each sequence is classified as an in-frame (IFN), out-of-frame (OFN), etc. mutation. 
 
 8. Collect the experiment summaries into one place (typically output/summaries/). 
 
