@@ -1,7 +1,7 @@
 experiment	region		ctl	d3	d7	d10
 Rosa26_v1	Rosa26_nc	x.4	x.1	x.2	x.3
 Rosa26_v2	Rosa26_nc	x.8	x.5	x.6	x.7
-Brd4_e3.1_v2	Brd4_e3.1	x.5	x.6	x.7	x.8
-Brd4_e3.3_v2	Brd4_e3.3	x.5	x.6	x.7	x.8
-Brd4_e4.1_v2	Brd4_e4.1	x.5	x.6	x.7	x.8
+Brd4_e3.1	Brd4_e3.1	x.5	x.6	x.7	x.8
+Brd4_e3.3	Brd4_e3.3	x.5	x.6	x.7	x.8
+Brd4_e4.1	Brd4_e4.1	x.5	x.6	x.7	x.8
 
