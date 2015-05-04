@@ -1,13 +1,11 @@
 # 14_crispr
-Code and processed data reported in Shi et al. (2014; submitted)
+Code and processed data reported in Shi et al. (2015), Nat. Biotechnol. [in press]
 
 #####################
 RUNNING THE PIPELINE
 #####################
 
-[QUESTION: This requires the rufus package. This might cause path problems when Junwei tries to run it. Need to test on his account.]
-
-To run the prevalence analysis on CRISPR data, do the following on BNB
+To run the prevalence analysis on CRISPR data, do the following.
 
 1. Create an “analysis directory” containing the following files. Working examples of these files are given in the “example_files” subdirectory. All “.txt” files are whitespace delimeted. 
 
@@ -25,9 +23,9 @@ To run the prevalence analysis on CRISPR data, do the following on BNB
      column 1: region name
      column 2: forward primer sequence
      column 3: reverse primer sequence
-     column 4: sequence of the wild-type region beginning with the 5’ end of the forward primer and     ending with the 5’ end of the reverse primer. Exonic nucleotides must be capitalized, with the left-most capitalized nucleotide indicating the start of the reading frame.
+     column 4: sequence of the wild-type region beginning with the 5’ end of the forward primer and ending with the 5’ end of the reverse primer. Exonic nucleotides must be capitalized, with the left-most capitalized nucleotide indicating the start of the reading frame.
 
-- r1.fastq and r2.fastq: the forward and reverse read fastq files from illumina. Currently the pipeline requires that all forward reads be in a single file, and similarly for all reverse reads. Starting with the *R1*.fastq.gz and *R2*.fastq.gz files provided by the illumina sequences, this can be accomplished by executing the following commands:
+- r1.fastq and r2.fastq: the forward and reverse read fastq files. Currently the pipeline requires that all forward reads be in a single file, and similarly for all reverse reads. Starting with the *R1*.fastq.gz and *R2*.fastq.gz files provided by the illumina sequences, this can be accomplished by executing the following commands:
 
 $ zcat *R1*.fastq.gz > r1.fastq
 $ zcat *R2*.fastq.gz > r2.fastq
@@ -37,17 +35,13 @@ $ zcat *R2*.fastq.gz > r2.fastq
      column 2: infection efficiency observed for control sample
      column 3,4,.... infection efficiency observed for timepoint samples
 
-- run_pipeline.py: a python script that configures the analysis and executes the main pipeline command. Takes ~30 min to run. 
-
-- run_visualization.py: a python script that performs that plots the results of the analysis. This takes < 1 min to run. [NEED TO IMPLEMENT THIS]
-
 2. To make sure the analysis code can be run, change to the analysis directory and execute the following command ($ indicates the prompt):
 
 $ chmod u+x *.py
 
 3. To run the pipeline, execute the following command in the analysis directory. This will create a “pipeline_output” subdirectory that contains the results of the analysis. This process takes ~30 min. 
 
-$ ./run_pipeline.py
+$ ./run_this.sh
 
 4. To plot the results of the analysis, execute the following command in the analysis directory. This creates a “visualization_output” subdirectory containing a bunch of plots as well as estimates of CRISPR efficiency. This process should take < 1 min. 
 

@@ -1,8 +1,12 @@
-#!/opt/hpc/pkg/python-2.7/bin/python
+#!/usr/local/bin/python
 
-pipeline_dir = '/data/kinney/jkinney/github/14_crispr'
-python_to_use = '/opt/hpc/pkg/python-2.7/bin/python'
-input_dir = '/data/kinney/jkinney/github/14_crispr/example'
+#pipeline_dir = '/data/kinney/jkinney/github/14_crispr'
+#python_to_use = '/opt/hpc/pkg/python-2.7/bin/python'
+#input_dir = '/data/kinney/jkinney/github/14_crispr/example'
+
+pipeline_dir = '/Users/jkinney/github/14_crispr'
+python_to_use = '/usr/local/bin/python'
+input_dir = '/Users/jkinney/github/14_crispr/example'
 
 # Indicate whether to use multiple nodes
 use_multiple_nodes = False
