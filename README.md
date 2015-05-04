@@ -5,9 +5,9 @@ Code and processed data reported in Shi et al. (2015), Nat. Biotechnol. [in pres
 RUNNING THE PIPELINE
 #####################
 
-To run the prevalence analysis on CRISPR data, do the following.
+To run the prevalence analysis on an example Cas9 data set, do the following.
 
-1. Create an “analysis directory” containing the following files. Working examples of these files are given in the “example_files” subdirectory. All “.txt” files are whitespace delimeted. 
+1. Change to the "example" directory. This containes the following files:
 
 - barcodes.txt: Lists the different barcodes used. Contains the following columns:
      column 1: barcode sequence
@@ -35,23 +35,27 @@ $ zcat *R2*.fastq.gz > r2.fastq
      column 2: infection efficiency observed for control sample
      column 3,4,.... infection efficiency observed for timepoint samples
 
-2. To make sure the analysis code can be run, change to the analysis directory and execute the following command ($ indicates the prompt):
+2. Edit config.py appropriately. Specifically, set the correct location of the python you want to use in the first line, and change the following appropriately:
 
-$ chmod u+x *.py
+pipeline_dir 
+python_to_use 
+input_dir 
 
-3. To run the pipeline, execute the following command in the analysis directory. This will create a “pipeline_output” subdirectory that contains the results of the analysis. This process takes ~30 min. 
+3. To make sure the analysis code can be run, change to the analysis directory and execute the following command ($ indicates the prompt):
 
-$ ./run_this.sh
+$ chmod u+x config.py
 
-4. To plot the results of the analysis, execute the following command in the analysis directory. This creates a “visualization_output” subdirectory containing a bunch of plots as well as estimates of CRISPR efficiency. This process should take < 1 min. 
+4. To run the pipeline, edit config.py appropriately. Then do
 
-$ ./run_visualization.py
+$ ./config.py
+
+This will create a subdirectory called "output" and fill it with the appropriate analysis stuff. Note: if you actually go through this analysis on the example data set, no plots will be created because there won't be enough reads to track. To actually get the plots that appear in the paper, run analysis on data in published_results/dataset_1/ and published_results/dataset_2/. 
  
 #####################
 PIPELINE DETAILS
 #####################
 
-run_pipeline.py uses the rufus module and is divided into the following stages:
+config.py calls pipeline.py, which uses the rufus module and is divided into the following stages:
 
 1. Split r1.fastq and r2.fastq into files containing 100K reads each. This allows the read processing to be efficiently farmed out to nodes
 
